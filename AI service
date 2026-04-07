@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/explain-risk")
+def explain_risk(risk_id: str):
+    return {
+        "risk_id": risk_id,
+        "explanation": "This risk exists due to a critical vulnerability on a public-facing system."
+    }
