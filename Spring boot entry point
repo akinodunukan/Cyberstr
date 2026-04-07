@@ -1,0 +1,6 @@
+@SpringBootApplication
+public class CyberStrongShieldApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(CyberStrongShieldApplication.class, args);
+    }
+}
