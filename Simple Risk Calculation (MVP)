@@ -1,0 +1,7 @@
+public class RiskCalculator {
+
+    public static double calculate(double likelihood, double impact, double controlEffectiveness) {
+        double inherent = likelihood * impact;
+        return inherent * (1 - controlEffectiveness);
+    }
+}
