@@ -1,0 +1,104 @@
+cyberstrongshield/
+│
+├── README.md
+├── .gitignore
+├── docker-compose.yml
+├── LICENSE
+│
+├── docs/
+│   ├── DATABASE_SCHEMA.md
+│   ├── RISK_ENGINE_SPEC.md
+│   ├── ASYNC_JOB_ARCHITECTURE.md
+│   ├── THREAT_MODEL.md
+│   ├── ATTACK_GRAPH_ENGINE.md
+│   ├── CYBER_RISK_RATING_MODEL.md
+│   ├── INDUSTRY_BENCHMARKING_ENGINE.md
+│   ├── ADVERSARIAL_SIMULATION_ENGINE.md
+│   ├── CYBER_CAPITAL_MODEL.md
+│   ├── SYSTEMIC_CYBER_SHOCK_MODEL.md
+│   └── KUBERNETES_DEPLOYMENT.md
+│
+├── backend/                 # Spring Boot (Core Platform)
+│   ├── build.gradle
+│   ├── settings.gradle
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/cyberstrongshield/
+│       │   │   ├── CyberStrongShieldApplication.java
+│       │   │   │
+│       │   │   ├── config/
+│       │   │   │   ├── SecurityConfig.java
+│       │   │   │   ├── JwtAuthFilter.java
+│       │   │   │   └── TenantContext.java
+│       │   │   │
+│       │   │   ├── tenant/
+│       │   │   ├── user/
+│       │   │   ├── asset/
+│       │   │   ├── risk/
+│       │   │   ├── control/
+│       │   │   ├── evidence/
+│       │   │   │
+│       │   │   ├── common/
+│       │   │   │   ├── BaseEntity.java
+│       │   │   │   └── AuditListener.java
+│       │   │   │
+│       │   │   └── api/
+│       │   │       └── v1/
+│       │   │           ├── AssetController.java
+│       │   │           ├── RiskController.java
+│       │   │           ├── ControlController.java
+│       │   │           └── HealthController.java
+│       │   │
+│       │   └── resources/
+│       │       ├── application.yml
+│       │       └── db/migration/
+│       │           ├── V1__init.sql
+│       │           ├── V2__rls.sql
+│       │           └── V3__core_tables.sql
+│       │
+│       └── test/
+│           └── java/com/cyberstrongshield/
+│               └── TenantIsolationTest.java
+│
+├── ai-service/              # FastAPI (AI + Risk Explanation)
+│   ├── requirements.txt
+│   └── app/
+│       ├── main.py
+│       ├── routes/
+│       │   ├── risk_explain.py
+│       │   └── compliance_gap.py
+│       └── services/
+│           └── explanation_engine.py
+│
+├── frontend/                # React + TypeScript
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── src/
+│       ├── App.tsx
+│       ├── pages/
+│       │   ├── Dashboard.tsx
+│       │   ├── Assets.tsx
+│       │   ├── Risks.tsx
+│       │   └── Simulation.tsx
+│       ├── components/
+│       │   ├── ScoreCard.tsx
+│       │   ├── RiskList.tsx
+│       │   └── Sidebar.tsx
+│       └── api/
+│           └── client.ts
+│
+├── infra/
+│   ├── docker/
+│   │   ├── backend.Dockerfile
+│   │   ├── ai.Dockerfile
+│   │   └── frontend.Dockerfile
+│   │
+│   └── k8s/
+│       ├── backend-deployment.yaml
+│       ├── postgres.yaml
+│       ├── redis.yaml
+│       └── ingress.yaml
+│
+└── scripts/
+    ├── seed_demo_data.sql
+    └── run_local.sh
